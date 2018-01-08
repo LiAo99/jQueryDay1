@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+    		<li id="li1"><a href="#">班长今天老帅了，嗷嗷帅...</a></li>
+   			<li class="li2">班长今天老帅了，嗷嗷帅...</li>
+    		<li>班长今天老帅了，嗷嗷帅...</li>
+   			<li>班长今天老帅了，嗷嗷帅...</li>
+   			<li>班长今天老帅了，嗷嗷帅...</li>
+    		<li>今天老帅了，嗷嗷帅...</li>
+   			<li>班长今天老帅了，嗷嗷帅...</li>
+		</ul>
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	//页面加载完成后执行函数，$(docunment).ready(function(){}),$(window).ready(function(){});
+	//页面加载后执行函数智能写一次，后面的会覆盖前面的；
+	$(function(){
+		//#id选择器
+		$("#li1").css("background","aqua");
+		//element选择器
+		$("li").css("font-size","20px");
+		//.class选择器
+		$(".li2").css("background","lawngreen");
+		//*选择器
+		$("*").css("margin-top","10px");
+		//选择下标为偶数的标签
+		$("li:even").css("padding-left","20px");
+		//选择下表为奇数的标签
+		$("li:odd").css("list-style","none");
+		//选择下标为某一个数字的标签
+		$("li:eq(2)").css("background","orange");
+		//选择比某下标数大的所有标签
+		$("li:gt(2)").css("background","salmon");
+		//选择比某下标数小的所有标签
+		$("li:lt(6)").css("list-style","none");
+		//子代选择器
+		$("ul li").css("font-size","28px");
+		//子代直接选择
+		$("#li1>a").css("margin-left","30px");
+		//js对象获取以及执行函数
+		var oLi1 = document.getElementById("li1");
+		oLi1.onclick = function(){
+			alert("你点击了第一个Li");
+		}
+		//将js对象装换成一个jQuery的对象
+		$(oLi1).click(function(){
+			alert("jQuery");
+		})
+		//将jQuery对象转变成js对象
+		$("li")[1].onclick =function(){
+			alert("你点击了第二个li");
+		}
+		$("li").get(2).onclick =function(){
+			alert("你点击了第三个li");
+		}
+	})
+</script>
+	
