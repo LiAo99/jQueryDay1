@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        div{
+        	width: 200px;height:200px;background: yellow;
+        }
+        .active{
+        	width: 50px;height:50px; background:red;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+			//每一个都写了，别写边注释。
+            //删除类名$("div:eq(0)").removeClass("active");
+            //添加类名操作$("div:eq(1)").addClass("active");
+            //切换类名操作$("div").toggleClass("active");
+            //alert($("div:eq(1)").hasClass("active"))
+            //$("button").click(function(){
+            	//隐藏动画$("div").hide(2000)
+            	//显示以及回调函数$("div").show(3000,function(){
+            		//切换$("div").toggleClass("active")
+            	//})
+            //})
+           // css选择1$("div:eq(0)").css({"background":"yellow","height":"50px"});
+          // css选择属性值console.log($("div:eq(0)").css("background"));
+//			$("button:eq(0)").click(function(){
+//				$("div").slideDown(2000,function(){
+//					$("div").css("background","pink");
+//				})
+//			})
+//			$("button:eq(1)").click(function(){
+//				$("div").slideUp(2000,function(){
+//					$("button:eq(1)").css("background","red");
+//				})
+//			})
+//			$("button:eq(2)").click(function(){
+//				$("div").slideToggle(2000,function(){
+//					$("button:eq(2)").css("background","red");
+//				})
+//			})
+//			$("button:eq(0)").click(function(){
+//				$("div").fadeIn(2000);
+//   		})
+//			$("button:eq(1)").click(function(){
+//				$("div").fadeOut(2000);
+//   		})
+//			$("button:eq(2)").click(function(){
+//				$("div").fadeToggle(1000);
+//   		})
+//			$("button:eq(3)").click(function(){
+//				$("div").fadeTo(1000,0.5,function(){
+//					alert();
+//				});
+//   		})
+		})
+    </script>
+</head>
+<body>
+<button>淡入</button>
+<button>淡出</button>
+<button>切换</button>
+<button>改变透明度</button>
+<div style="width:200px;height:300px;background:darkblue;display: none;"></div>
+</body>
+</html>
