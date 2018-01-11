@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		p{
+			float:left;
+			margin:0 20px;
+		}
+	</style>
+	<body>
+	</body>
+</html>
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	//注册用户名
+	$.ajax({
+		method: "POST",				// 请求方法		
+		url: "http://csit.top/api_user.php",	// 地址
+		data: {						// 发送给服务器的数据
+			status: "register",
+			username:"lalala",
+			password:111111
+		},
+		headers: {				// 请求头
+			"Content-Type": "application/x-www-form-urlencoded"
+		},
+//		dataType: "JSONP",
+		success: function(data) {
+			var obj = JSON.parse(data);
+			alert(obj.message);
+		}
+	});		
+	//登录
+	$.ajax({
+		method: "POST",				// 请求方法		
+		url: "http://csit.top/api_user.php",	// 地址
+		data: {						// 发送给服务器的数据
+			status: "login",
+			username:"qinfeng",
+			password:888888
+		},
+		headers: {				// 请求头
+			"Content-Type": "application/x-www-form-urlencoded"
+		},
+//		dataType: "JSONP",
+		success: function(data) {
+			var obj = JSON.parse(data);
+			alert(obj.message);
+		}
+	});		
+	//商品栏目
+	var url ="http://csit.top/api_cat.php"
+	$.get(url,
+		function(data){
+			var obj = JSON.parse(data);
+			var arr =obj.data;
+//			var oUl =
+			for (var i = 0; i < arr.length; i++){
+					 var oP=document.createElement("p");
+					 //oP.innerHTML='<a onclick="getGoods('+arr[i].cat_id+')">'+arr[i].cat_name+'</a>';
+					 $(oP).html('<a href="#">'+arr[i].cat_name+"</a>");    
+					 document.body.appendChild(oP);
+				}
+		}	
+	);	
+	//购物车显示
+	$.ajax({
+		method: "GET",				// 请求方法		
+		url: "http://csit.top/api_cart.php",	// 地址
+		headers: {				// 请求头
+			token: "2d622a9209535b9fbe212d69b8d5bc62"
+		},
+//		dataType: "JSONP",
+		success: function(data) {
+			var obj = JSON.parse(data);
+			console.log(obj);
+		}
+	});
+	//添加购物车
+	$.ajax({
+		method: "POST",				// 请求方法		
+		url: "http://csit.top/api_cart.php",	// 地址
+		data: {						// 发送给服务器的数据
+			goods_id: 1223,
+			number:1,
+		},
+		headers: {				// 请求头
+			token: "2d622a9209535b9fbe212d69b8d5bc62"
+		},
+//		dataType: "JSONP",
+		success: function(data) {
+			var obj = JSON.parse(data);
+			console.log(obj);
+		}
+	});		
+</script>
+	
