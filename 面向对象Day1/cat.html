@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				background:url(imgs/bg.jpg);
+			}
+		</style>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+$(window).ready(function(){
+	
+	var timer =setInterval(function(){
+		function Star(){
+			
+			
+				this.ele=$('body').append('<img src="imgs/1.jpg"/>');
+				this.fly =function(){
+					var l = Math.floor(Math.random()* 1280 + 20);
+					var t = Math.floor(Math.random()* 230 + 20);
+					var timer = Math.floor(Math.random()* 9 + 3);
+					var o = Math.random()* 0.6 + 0.2;
+					$('img').eq(a).css({'left': +l+'px','top': +t+'px','opacity':+o,"width":+50+"px",
+					})
+					$("img").eq(a).animate({"left":+100+"px"},"slow")
+				}
+
+			}
+		
+		
+		for(var a = 0; a<30; a++){	
+		var jafeicat1 = new Star();
+		this.ele;
+		jafeicat1.fly(a)
+		}
+//		clearInterval(timer);
+	},3000)
+	
+})
+
+</script>	
